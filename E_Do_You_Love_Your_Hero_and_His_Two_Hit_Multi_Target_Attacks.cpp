@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+
+using namespace std;
+using namespace __gnu_pbds;
+
+#define int long long int
+#define uint unsigned long long
+#define umap unordered_map
+#define endl '\n'
+#define no cout << "NO" << endl
+#define yes cout << "YES" << endl
+#define DEBUG(x) cerr << #x << ": " << x << endl
+#define oneCount(n) __builtin_popcountll(n)
+#define clz(n) __builtin_clz(n)
+#define clzLL(n) __builtin_clzll(n)
+#define ctz(n) __builtin_ctz(n)
+#define ctzLL(n) __builtin_ctzll(n)
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> pbds;
+
+const int mod = 1e9 + 7;
+
+void omkrishna(int precision) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(precision);
+}
+
+void solve() {
+    int k;
+    cin >> k;
+    vector<pair<int, int>> arr;
+    
+    int x = 1, y = 1;
+    for (int i = 0; i < k; i++) {
+        arr.push_back({x, y});
+        arr.push_back({x + 1, y});
+        y += 4;
+    }
+    
+    cout << arr.size() << endl;
+    for (auto &i : arr) {
+        cout << i.first << " " << i.second << endl;
+    }
+}
+
+int32_t main() {
+    omkrishna(10);
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
+    return 0;
+}
